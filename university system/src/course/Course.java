@@ -1,5 +1,16 @@
 package course;
 
+import users.*;
+import additional.*;
+import comporators.*;
+import course.*;
+import database.*;
+import enums.*;
+import exceptions.*;
+import service.*;
+import system.*;
+
+
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.Vector;
