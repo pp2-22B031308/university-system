@@ -5,21 +5,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.LocalDate;
 
-import controller.UniversitySystem;
-import model.Faculty;
-import model.Gender;
-import model.Manager;
-import model.ManagerType;
-import model.Organization;
-import model.OrganizationName;
-import model.Role;
-import model.Student;
-import model.StudyDegree;
-import model.Teacher;
-import model.TeacherType;
-import model.TuitionType;
-import model.User;
-import repository.DataBase;
+import users.*;
+import additional.*;
+import comporators.*;
+import course.*;
+import database.*;
+import enums.*;
+import exceptions.*;
+import service.*;
+import system.*;
 
 public class UserFactory {
 	public static User getInstance(int type) throws IOException {
