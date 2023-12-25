@@ -1,7 +1,7 @@
 package enums;
 
 public enum Gender {
-	M, F, UNDEFINED;
+	M, F;
 	
 	
 	public static  Gender convertGen(int g) {
