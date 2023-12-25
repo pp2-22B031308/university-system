@@ -1,7 +1,8 @@
 package exceptions;
 
 public class PutMarkException extends Exception{
-	
+
+	private static final long serialVersionUID = 1L;
 	public PutMarkException(){
 		
 	}
