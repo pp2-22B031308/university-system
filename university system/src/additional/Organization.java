@@ -1,11 +1,25 @@
 package additional;
 
+import users.*;
+import additional.*;
+import comporators.*;
+import course.*;
+import database.*;
+import enums.*;
+import exceptions.*;
+import service.*;
+import system.*;
+
+
 import java.io.Serializable;
+
 import java.util.Objects;
 
 public class Organization implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	private OrganizationName name;
-	 private Role role;
+	private Role role;
 	 
 	public Organization() {
 		
