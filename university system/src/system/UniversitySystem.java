@@ -5,26 +5,28 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import repository.DataBase;
+//import repository.DataBase;
 import service.AdminService;
 import service.ManagerService;
 import service.MarkFactory;
 import service.StudentService;
 import service.TeacherService;
-import service.UserFactory;
+//import service.UserFactory;
 
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Vector;
 import java.util.stream.Stream;
 
-import model.Course;
-import model.Faculty;
-import model.Mark;
-import model.Student;
-import model.SuperAdmin;
-import model.Teacher;
-import model.User;
+import users.*;
+import additional.*;
+import comporators.*;
+import course.*;
+import database.*;
+import enums.*;
+import exceptions.*;
+import service.*;
+import system.*;
 
 public final class UniversitySystem {
 	static UniversitySystem  universitySystem = new  UniversitySystem();
