@@ -1,16 +1,28 @@
 package exceptions;
 
-public class PutMarkException extends Exception{
+public class EnrollException extends Exception {
 
 	private static final long serialVersionUID = 1L;
-	public PutMarkException(){
-		
-	}
-	
-	public  String noAccsesCourseMessage() {
-		return "You cannot put mark to this course!";
-	}
-	public String NoCourses() {
-		return "There are no courses to put mark!";
-	}
+
+	public EnrollException()
+     {
+         super("Error");
+     
+     }
+   
+     public static String printMessage(int check)
+     {
+  
+         switch (check) {
+         case -1:
+             return "User does not exist";
+         case 0:
+        	 return "Login or password is wrong.Please, try again";
+         case -2 :
+        	 return "Login or password is wrong.Please, try again";
+         }
+		return "";
+     }
 }
+
+
