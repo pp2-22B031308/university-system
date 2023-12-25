@@ -1,6 +1,7 @@
 package interfaces;
 
-import repository.DataBase;
+import database.*;
+import enums.*;
 
 public interface CanViewCourses {
 	public static void viewCourses(Faculty faculty) {
