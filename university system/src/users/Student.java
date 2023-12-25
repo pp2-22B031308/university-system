@@ -1,6 +1,16 @@
 package users;
 
+import users.*;
+import additional.*;
+import comporators.*;
+import course.*;
+import database.*;
+import enums.*;
+import exceptions.*;
+import service.*;
+import system.*;
 import java.time.LocalDate;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -9,13 +19,14 @@ import java.util.Vector;
 import java.util.stream.Collectors;
 
 public class Student extends User implements Comparable<Student>{
+
+	private static final long serialVersionUID = 1L;
 	private Faculty faculty;
 	private StudyDegree degree;
 	private Organization organization;
 	private double gpa;
 	private HashMap<Course, Mark > marks;
 	private int creditsTaken;
-	private TuitionType tuitionType;
 	private final int CREDITS_LIMIT = 23;
 
 	
@@ -25,11 +36,10 @@ public class Student extends User implements Comparable<Student>{
 
 	public Student(String id, String name, String surname, LocalDate birthDate, Gender gender, String adress, String email,
 			String contactNumber, String login, String password,Faculty faculty,  StudyDegree degree,
-		TuitionType tuitionType, Organization organization) {
+		Organization organization) {
 		super(id, name, surname, birthDate, gender, adress, email, contactNumber, login, password);
 		this.faculty = faculty;
 		this.degree = degree;
-		this.tuitionType = tuitionType;
 		this.organization = organization;
 	}
 	public Faculty getFaculty() {
@@ -56,12 +66,7 @@ public class Student extends User implements Comparable<Student>{
 	public void setDegree(StudyDegree degree) {
 		this.degree = degree;
 	}
-	public TuitionType getTuitionType() {
-		return tuitionType;
-	}
-	public void setTuitionType(TuitionType tuitionType) {
-		this.tuitionType = tuitionType;
-	}
+
 	public int getCreditsTaken() {
 		return creditsTaken;
 	}
@@ -92,7 +97,7 @@ public class Student extends User implements Comparable<Student>{
 		super.hashCode();
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + Objects.hash( degree, faculty, gpa, organization, tuitionType);
+		result = prime * result + Objects.hash( degree, faculty, gpa, organization);
 		return result;
 	}
 	@Override
@@ -107,11 +112,11 @@ public class Student extends User implements Comparable<Student>{
 		Student other = (Student) obj;
 		return degree == other.degree && faculty == other.faculty
 				&& Double.doubleToLongBits(gpa) == Double.doubleToLongBits(other.gpa)
-				&& organization == other.organization && tuitionType == other.tuitionType;
+				&& organization == other.organization;
 	}
 	@Override
 	public String toString() {
-		return "Student [faculty=" + faculty + ", organization=" + organization + ", gpa=" + gpa + ", degree=" + degree + ", tuitionType=" + tuitionType + "," +
+		return "Student [faculty=" + faculty + ", organization=" + organization + ", gpa=" + gpa + ", degree=" + degree + "," +
 	super.toString()+ "]";
 	}
 	
