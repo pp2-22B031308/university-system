@@ -10,9 +10,9 @@ public enum Gender {
 			return Gender.M;
 		 case 2:
 			return Gender.F;
-		 case 3:
-			 return Gender.UNDEFINED;
+		 
 		}
-		 return Gender.UNDEFINED;
+		 return Gender.F;
 	}
 }
+
