@@ -1,6 +1,14 @@
 package service;
 
-import model.Mark;
+import users.*;
+import additional.*;
+import comporators.*;
+import course.*;
+import database.*;
+import enums.*;
+import exceptions.*;
+import service.*;
+import system.*;
 
 public class MarkService {
 //	public static double getPrefinalResult(double att1, double att2){
