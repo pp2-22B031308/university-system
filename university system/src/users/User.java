@@ -1,13 +1,14 @@
 package users;
-
+import enums.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Vector;
 
 public abstract class User implements Serializable, Cloneable {
-    
-    private String id;
+
+	private static final long serialVersionUID = 1L;
+	private String id;
     private String name;
     private String surname;
     private LocalDate birthDate;
