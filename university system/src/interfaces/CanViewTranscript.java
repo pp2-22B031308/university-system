@@ -1,6 +1,7 @@
 package interfaces;
 
-import service.MarkService;
+import service.*;
+import users.*;
 
 public interface CanViewTranscript {
 	public static void ViewTranscript(Student student) {
