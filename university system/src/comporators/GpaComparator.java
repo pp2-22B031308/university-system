@@ -1,6 +1,8 @@
-package model;
+package comporators;
 
 import java.util.Comparator;
+
+import users.*;
 
 public class GpaComparator implements Comparator<Student>{
 
