@@ -1,8 +1,17 @@
 package users;
-
+import users.*;
+import additional.*;
+import comporators.*;
+import course.*;
+import database.*;
+import enums.*;
+import exceptions.*;
+import service.*;
+import system.*;
 import java.time.LocalDate;
 
 public class Manager extends Employee {
+	private static final long serialVersionUID = 1L;
 	private ManagerType managerType;
 	public Manager() {
 		super();
