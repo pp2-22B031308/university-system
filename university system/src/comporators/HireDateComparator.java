@@ -3,7 +3,7 @@ package comporators;
 import java.util.Comparator;
 import users.*;
 
-public class NameComparator implements Comparator<Student> {
+public class HireDateComparator implements Comparator<Student> {
 
 	@Override
 	public int compare(Student o1, Student o2) {
