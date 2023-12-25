@@ -2,15 +2,17 @@ package service;
 
 import java.util.Vector;
 
-import controller.UniversitySystem;
-import model.CanViewCourses;
-import model.CanViewTeachers;
-import model.CanViewTranscript;
-import model.Course;
-import model.Faculty;
-import model.Student;
-import model.Teacher;
-import repository.DataBase;
+import users.*;
+import additional.*;
+import comporators.*;
+import course.*;
+import database.*;
+import enums.*;
+import exceptions.*;
+import service.*;
+import system.*;
+import interfaces.*;
+
 
 public class StudentService implements CanViewCourses, CanViewTranscript, CanViewTeachers{
 
