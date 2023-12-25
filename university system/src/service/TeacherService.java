@@ -2,16 +2,18 @@ package service;
 
 import java.io.BufferedReader;
 
-import controller.UniversitySystem;
-import model.CanViewCourses;
-import model.CanViewStudents;
-import model.Course;
-import model.CourseFile;
-import model.Faculty;
-import model.Mark;
-import model.Student;
-import model.User;
-import repository.DataBase;
+
+
+import users.*;
+import additional.*;
+import comporators.*;
+import course.*;
+import database.*;
+import enums.*;
+import exceptions.*;
+import service.*;
+import system.*;
+import interfaces.*;
 
 public class TeacherService implements CanViewCourses, CanViewStudents {
 	
