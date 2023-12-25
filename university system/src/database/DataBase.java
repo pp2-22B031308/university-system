@@ -1,6 +1,6 @@
 package database;
-
 import java.io.File;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -10,11 +10,15 @@ import java.io.Serializable;
 import java.util.Map;
 import java.util.Vector;
 
-import model.Course;
-import model.Employee;
-import model.Mark;
-import model.Student;
-import model.User;
+import users.*;
+import additional.*;
+import comporators.*;
+import course.*;
+import database.*;
+import enums.*;
+import exceptions.*;
+import service.*;
+import system.*;
 
 //import streams.User;
 
