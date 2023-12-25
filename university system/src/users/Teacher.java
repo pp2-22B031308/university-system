@@ -1,11 +1,21 @@
 package users;
 
 import java.time.LocalDate;
+
 import java.util.Objects;
 import java.util.Vector;
+import users.*;
+import additional.*;
+import comporators.*;
+import course.*;
+import database.*;
+import enums.*;
+import exceptions.*;
+import service.*;
+import system.*;
 
 public class Teacher extends Employee{
-
+	private static final long serialVersionUID = 1L;
 	private Faculty faculty;
 	private TeacherType teacherType;
 	private Vector <Course> courses;
