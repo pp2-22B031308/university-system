@@ -1,8 +1,9 @@
 package users;
 import java.time.LocalDate;
-
+import enums.*;
 public class Employee extends User {
 
+	private static final long serialVersionUID = 1L;
 	private LocalDate hireDate;
 
 	public Employee() {
