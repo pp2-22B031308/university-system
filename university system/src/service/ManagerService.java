@@ -1,13 +1,18 @@
 package service;
 import java.util.Vector;
 
-import controller.UniversitySystem;
-import model.CanViewStudents;
-import model.CanViewTeachers;
-import model.Course;
-import model.Student;
-import model.Teacher;
-import repository.DataBase;
+
+import users.*;
+import additional.*;
+import comporators.*;
+import course.*;
+import database.*;
+import enums.*;
+import exceptions.*;
+import interfaces.CanViewStudents;
+import interfaces.CanViewTeachers;
+import service.*;
+import system.*;
 
 public class ManagerService implements CanViewTeachers, CanViewStudents {
 	
