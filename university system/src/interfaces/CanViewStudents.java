@@ -1,5 +1,6 @@
 package interfaces;
 
+import users.*;
 public interface CanViewStudents {
 	public static void viewStudents() {
 		
