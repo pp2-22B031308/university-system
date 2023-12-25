@@ -1,8 +1,8 @@
 package interfaces;
-
+import users.*;
 import java.util.Vector;
 
-import repository.DataBase;
+import database.*;
 
 public interface CanViewTeachers {
 	
