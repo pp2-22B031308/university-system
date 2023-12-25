@@ -1,9 +1,10 @@
 package exceptions;
 
 public class EnrollException extends Exception {
-	
-   
-     public EnrollException()
+
+	private static final long serialVersionUID = 1L;
+
+	public EnrollException()
      {
          super("Error");
      
