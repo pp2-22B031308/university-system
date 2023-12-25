@@ -50,13 +50,12 @@ public class UserFactory {
 		    System.out.println("Study Degree:\n1.PHD\n2.MASTER\n3.BACHELOR");
 		    StudyDegree degree = StudyDegree.convertStudyDegree(Integer.parseInt(br.readLine()));
 		    System.out.println("Tuition Type:\n1.Grant\n2.Paid");
-			TuitionType tuitionType = TuitionType.convertTuitionType(Integer.parseInt(br.readLine()));
 			System.out.println("Organization:\nName:\n1.OSIT\n2.BCL\n3.CRYSTALS\n4.MONTAIN KINGS");
 		    OrganizationName orgName = OrganizationName.convertOrganizationName(Integer.parseInt(br.readLine()));
 		    System.out.println("Role in organization:\n1.Head\n2.Member");
 		    Role role = Role.convertRole(Integer.parseInt(br.readLine()));
 			Organization org = new Organization(orgName, role );
-		    return new Student(id, name, surname, birthDate, gender, adress, email, number, login, password, faculty, degree, tuitionType, org);
+		    return new Student(id, name, surname, birthDate, gender, adress, email, number, login, password, faculty, degree, org);
 		case 2:
 		    System.out.println("Enter a hiredate\nYear(like 2017):");
 		    y = Integer.parseInt(br.readLine());
