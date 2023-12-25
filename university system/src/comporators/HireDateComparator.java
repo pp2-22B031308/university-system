@@ -1,14 +1,12 @@
 package comporators;
 
 import java.util.Comparator;
-
 import users.*;
 
-public class HireDateComparator implements Comparator<Employee> {
+public class NameComparator implements Comparator<Student> {
 
 	@Override
-	public int compare(Employee o1, Employee o2) {
-		return o1.getHireDate().compareTo(o2.getHireDate());
+	public int compare(Student o1, Student o2) {
+		return o1.getName().compareTo(o2.getName());
 	}
-
 }
