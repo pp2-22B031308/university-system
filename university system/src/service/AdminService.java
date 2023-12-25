@@ -1,5 +1,15 @@
 package service;
 
+import users.*;
+
+import additional.*;
+import comporators.*;
+import course.*;
+import database.*;
+import enums.*;
+import exceptions.*;
+import service.*;
+import system.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,24 +17,6 @@ import java.time.LocalDate;
 import java.util.Optional;
 import java.util.StringTokenizer;
 
-import controller.EnrollException;
-import controller.ExistUserException;
-import controller.UniversitySystem;
-import model.Faculty;
-import model.Gender;
-import model.Manager;
-import model.ManagerType;
-import model.Organization;
-import model.OrganizationName;
-import model.Role;
-import model.Student;
-import model.StudyDegree;
-import model.SuperAdmin;
-import model.Teacher;
-import model.TeacherType;
-import model.TuitionType;
-import model.User;
-import repository.DataBase;
 
 public class AdminService {
 
