@@ -1,6 +1,6 @@
 package exceptions;
 
-public class EnrollException extends Exception {
+public class WrongLogInException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 
