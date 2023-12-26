@@ -1,6 +1,6 @@
 package research;
 
-import interfaces.Format;
+import users.*;
 
 public class ResearchPaper {
 	
