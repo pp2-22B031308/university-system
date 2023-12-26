@@ -1,7 +1,7 @@
 package enums;
 
 public enum OrganizationName {
- OSIT, BCL, CRYSTALS, MONTAIN_KINGS;
+ OSIT, BCL, CRYSTALS, FACES;
   public static OrganizationName convertOrganizationName(int name) {
     switch(name) {
     case 1:
@@ -11,7 +11,7 @@ public enum OrganizationName {
     case 3:
      return OrganizationName.CRYSTALS;
     case 4:
-     return OrganizationName.MONTAIN_KINGS;
+     return OrganizationName.FACES;
     }
     return null;
    }
