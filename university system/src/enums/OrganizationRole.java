@@ -1,6 +1,6 @@
 package enums;
 
-public enum Role {
+public enum OrganizationRole {
 	HEAD, MEMBER;
 
 	 public static Role convertRole(int role) {
