@@ -71,13 +71,18 @@ public final class UniversityWSP {
                     operationMessage("Manager " + techSupportSpecialist.getName() + " " + techSupportSpecialist.getSurname() + " is enrolled");
                     techSupportSpecialistMenu(techSupportSpecialist);
                 }
+//                else if (user instanceof Researcher) {
+//                	Researcher researcher = (Researcher) user;
+//                    operationMessage("Researcher " + Researcher.getName() + " " + Researcher.getSurname() + " is enrolled");
+//                    techSupportSpecialistMenu(researcher);
+//                }
             }
         	
-        	throw new EnrollException();
+        	throw new WrongLogInException();
         	
         } 
-        catch (EnrollException e) {
-            operationMessage(EnrollException.printMessage(loginPasswordValidator(login, password)));
+        catch (WrongLogInException e) {
+            operationMessage(WrongLogInException.printMessage(loginPasswordValidator(login, password)));
             run();
         }
     }
@@ -139,7 +144,7 @@ public final class UniversityWSP {
 			try {
 				choice = Integer.parseInt(br.readLine());
 		        if(choice==1) {
-				    System.out.println("Which faculty course belongs:\n1.ISE\n2.SBS\n3.SEPI\n4.SGGE\n5.SITE\n6.SNSS");
+				    System.out.println("Which faculty course belongs:\n1.ISE\n2.SBS\n3.KMA\n4.MKM\n5.SITE\n6.SPE");
 				    Faculty faculty = Faculty.convertToFac(Integer.parseInt(br.readLine()));
 		        	
 				    TeacherСharge.viewCourses(faculty);
@@ -338,7 +343,7 @@ public final class UniversityWSP {
 		            System.out.println("Description:");
 		            String description = br.readLine();
 		            
-		            System.out.println("Faculty (1.ISE 2.SBS 3.SEPI 4.SGGE 5.SITE 6.SNSS):");
+		            System.out.println("Faculty (1.ISE 2.SBS 3.KMA 4.MKM 5.SITE 6.SPE):");
 		            
 		            int facultyChoice = Integer.parseInt(br.readLine());
 		            Faculty faculty = Faculty.convertToFac(facultyChoice);
