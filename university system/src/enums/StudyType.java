@@ -1,6 +1,6 @@
 package enums;
 
-public enum StudentType {
+public enum StudyDegree {
 	PHD, MASTER, BACHELOR;
 	
 	public static StudyDegree convertStudyDegree(int studyDegree) {
