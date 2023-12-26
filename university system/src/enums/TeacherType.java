@@ -5,11 +5,10 @@ public enum TeacherType {
 
 	P, S_l, T;
 	
-	/*
-	 * P - PROFESSOR 
-	 * S_L - SENIOR_LECTURES
-	 * T - TUTOR
-	*/
+//	*
+//	 * P - PROFESSOR 
+//	 * S_L - SENIOR_LECTURES
+//	 * T - TUTOR
 	
 		 public static TeacherType convertTeacherType(int teacherType) {
 		  switch(teacherType) {
