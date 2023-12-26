@@ -1,16 +1,16 @@
 package enums;
 
 public enum Gender {
-	M, F, UNDEFINED;
+	MALE, FEMALE;
 	
 	
 	public static  Gender convertGen(int g) {
 		switch(g){
 		 case 1 :
-			return Gender.M;
+			return Gender.MALE;
 		 case 2:
-			return Gender.F;
+			return Gender.FEMALE;
 		}
-		 return Gender.UNDEFINED;
+		 return Gender.MALE;
 	}
 }
