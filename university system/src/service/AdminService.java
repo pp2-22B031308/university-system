@@ -2,20 +2,10 @@ package service;
 
 import users.*;
 
-import additional.*;
-import comporators.*;
-import course.*;
 import database.*;
-import enums.*;
 import exceptions.*;
-import service.*;
 import system.*;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.time.LocalDate;
-import java.util.Optional;
-import java.util.StringTokenizer;
 
 
 public class AdminService {
@@ -29,9 +19,6 @@ public class AdminService {
 	    DataBase.getUsers().add(u);
 	    UniversitySystem.operationMessage("New user "+u.getName()+" "+u.getSurname()+" is succssefully added");
 	}
-	public static String updateUser(String id) throws NumberFormatException, IOException {
-			return UserFactory.createUpdatedUser(DataBase.getUsers().stream().filter(user -> user.getId().equals(id)).findFirst().orElse(null));
-		}
 		
 	public static void deleteUser(String id) {
 		try {
