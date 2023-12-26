@@ -1,22 +1,14 @@
 package course;
 
-import users.*;
-import additional.*;
-import comporators.*;
-import course.*;
-import database.*;
 import enums.*;
-import exceptions.*;
-import service.*;
-import system.*;
 
 
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.Vector;
 
 public class Course implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private String id;
 	private String name;
 	private String description;
@@ -25,7 +17,7 @@ public class Course implements Serializable {
 	private int numOfCredit;
 
 	
-	
+	public Course() {}
 	public Course(String id, String name, String description, Course prerequisite, Faculty faculty, int numOfCredit) {
 		this.id = id;
 		this.name = name;
@@ -33,7 +25,6 @@ public class Course implements Serializable {
 		this.prerequisite = prerequisite;
 		this.numOfCredit = numOfCredit;
 		this.faculty = faculty;
-//		this.teachers= new Vector<Course>();
 	}
 
 	public String getId() {
@@ -85,7 +76,7 @@ public class Course implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Course [id=" + id + ", name=" + name + ", discription=" + description + ", prerequisite=" + prerequisite
+		return "Course [id=" + id + ", name=" + name + ", description=" + description + ", prerequisite=" + prerequisite
 				+ ", numOfCredit=" + numOfCredit + "Faculty "+faculty+ "]";
 	}
 
@@ -108,9 +99,5 @@ public class Course implements Serializable {
 				&& Objects.equals(name, other.name) && numOfCredit == other.numOfCredit
 				&& Objects.equals(prerequisite, other.prerequisite);
 	}
-
-//	public Vector <Teacher> getCourses() {
-//		
-//	}
 
 }
