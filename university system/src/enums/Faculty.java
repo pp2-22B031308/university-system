@@ -1,7 +1,7 @@
 package enums;
 
 public enum Faculty {
-	SITE, SBS, SGGE, SEPI, SNSS, ISE;
+	SITE, SBS, KMA, MKM, SPE, ISE;
 	
 	
 	
@@ -12,13 +12,13 @@ public enum Faculty {
 	 case 2:
 		 return Faculty.SBS;
 	 case 3:
-		 return Faculty.SEPI;
+		 return Faculty.KMA;
 	 case 4:
-		 return Faculty.SGGE;
+		 return Faculty.MKM;
 	 case 5:
 		 return Faculty.SITE;
 	 case 6:
-		 return  Faculty.SNSS;
+		 return  Faculty.SPE;
 		}
 	return null;
 	}
