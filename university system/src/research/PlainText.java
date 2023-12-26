@@ -1,6 +1,6 @@
 package research;
 
-import interfaces.*;
+import users.*;
 
 public class PlainText implements Format {
 
