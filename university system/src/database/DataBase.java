@@ -12,7 +12,7 @@ import java.util.Vector;
 
 import users.*;
 import additional.*;
-import comporators.*;
+import comparators.*;
 import course.*;
 import database.*;
 import enums.*;
@@ -26,6 +26,7 @@ public final class DataBase implements Serializable, Cloneable{
 	
 	private static Vector <User> users;
 	private static Vector <Course> courses;
+	private static Vector<Researcher> researchers;
 	private static DataBase db = new DataBase();
 	private DataBase() {
 	
@@ -113,6 +114,50 @@ public final class DataBase implements Serializable, Cloneable{
 		}
 		public static void setCourses(Vector <Course> courses) {
 			DataBase.courses = courses;
+		}
+		
+		
+		public static void readResearchers() {
+		    try {
+		        FileInputStream fis = new FileInputStream("researchers.txt");
+		        ObjectInputStream oin = new ObjectInputStream(fis);
+		        researchers = (Vector<Researcher>) oin.readObject();
+		        oin.close();
+		        fis.close();
+		    } catch (IOException e) {
+		        researchers = new Vector<>();
+		        System.err.println("researchers.txt: IOException");
+		    } catch (ClassNotFoundException e) {
+		        researchers = new Vector<>();
+		        System.err.println("researchers.txt: ClassNotFoundException");
+		    }
+		}
+		public static void saveResearchers() {
+		    try {
+		        FileOutputStream fileOut = new FileOutputStream("researchers.txt");
+		        ObjectOutputStream out = new ObjectOutputStream(fileOut);
+		        out.writeObject(researchers);
+		        out.flush();
+		        out.close();
+		        fileOut.close();
+		    } catch (IOException e) {
+		        System.err.println("researchers.txt: IOException");
+		    }
+		}
+		
+		public static void addResearcher(User researcher) {
+	        if (users == null) {
+	            users = new Vector<>();
+	        }
+	        users.add(researcher);
+	    }
+		
+		public static Vector<Researcher> getResearchers() {
+		    return researchers;
+		}
+
+		public static void setResearchers(Vector<Researcher> researchers) {
+		    DataBase.researchers = researchers;
 		}
 
 }
