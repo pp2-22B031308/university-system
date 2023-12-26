@@ -48,7 +48,7 @@ public class UserFactory {
     }
 
     private static Student createStudent(String id, String name, String surname, Gender gender, String email, String login, String password) throws IOException {
-        System.out.println("Faculty:\n1.ISE\n2.SBS\n3.SEPI\n4.SGGE\n5.SITE\n6.SNSS");
+        System.out.println("Faculty:\n1.ISE\n2.SBS\n3.KMA\n4.MKM\n5.SITE\n6.SPE");
         Faculty faculty = Faculty.convertToFac(Integer.parseInt(br.readLine()));
         
         System.out.println("Study Degree:\n1.PHD\n2.MASTER\n3.BACHELOR");
@@ -66,7 +66,7 @@ public class UserFactory {
     }
 
     private static Teacher createTeacher(String id, String name, String surname, Gender gender, String email, String login, String password) throws IOException {
-        System.out.println("Faculty:\n1.ISE\n2.SBS\n3.SEPI\n4.SGGE\n5.SITE\n6.SNSS");
+        System.out.println("Faculty:\n1.ISE\n2.SBS\n3.KMA\n4.MKM\n5.SITE\n6.SPE");
         Faculty faculty = Faculty.convertToFac(Integer.parseInt(br.readLine()));
         
         System.out.println("Teacher Type:\n1.Professor\n2.Senior Lecturer\n3.Tutor");
@@ -83,7 +83,7 @@ public class UserFactory {
     }
     
     private static GraduateStudent createGraduateStudent(String id, String name, String surname, Gender gender, String email, String login, String password) throws IOException {
-        System.out.println("Faculty:\n1.ISE\n2.SBS\n3.SEPI\n4.SGGE\n5.SITE\n6.SNSS");
+        System.out.println("Faculty:\n1.ISE\n2.SBS\n3.KMA\n4.MKM\n5.SITE\n6.SPE");
         Faculty faculty = Faculty.convertToFac(Integer.parseInt(br.readLine()));
 
         System.out.println("Study Degree:\n1.PHD\n2.MASTER\n3.BACHELOR");
