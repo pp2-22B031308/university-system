@@ -1,6 +1,6 @@
 package research;
 
-import interfaces.*;
+import users.*;
 
 public class Bibtex implements Format {
     public String formatCitation(String title, String authors, String journal, int year, int pages) {
@@ -10,4 +10,3 @@ public class Bibtex implements Format {
                              authors, title, journal, year, pages);
     }
 }
-
