@@ -3,6 +3,8 @@ package research;
 import interfaces.Format;
 
 public class ResearchPaper {
+	
+	private int id;
 	private String title;
     private String authors;
     private String journal;
@@ -12,7 +14,6 @@ public class ResearchPaper {
     
     // Constructor
     public ResearchPaper(String title, String authors, String journal, int year, int pages, int citations) {
-		super();
 		this.title = title;
 		this.authors = authors;
 		this.journal = journal;
@@ -21,6 +22,10 @@ public class ResearchPaper {
 		this.citations = citations;
 		
 	}
+    
+    public int getId() {
+    	return this.id;
+    }
 
     // getters and setters
 	public String getTitle() {
