@@ -1,5 +1,4 @@
 package database;
-import java.io.File;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -7,157 +6,102 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.Map;
 import java.util.Vector;
 
 import users.*;
-import additional.*;
-import comparators.*;
 import course.*;
-import database.*;
-import enums.*;
-import exceptions.*;
-import service.*;
-import system.*;
 
-//import streams.User;
+public final class DataBase implements Serializable, Cloneable {
 
-public final class DataBase implements Serializable, Cloneable{
-	
-	private static Vector <User> users;
-	private static Vector <Course> courses;
-	private static Vector<Researcher> researchers;
-	private static DataBase db = new DataBase();
-	private DataBase() {
-	
-	}
-	public static DataBase getDb() {
-		return db;
-	}
- 	
-	static {
-		readUsers();
-		readCourses();
-	}
-	 @SuppressWarnings("unchecked")
-	    public static void readUsers() {
-	        try {
-	            FileInputStream fis = new FileInputStream("users.txt");
-	            ObjectInputStream oin = new ObjectInputStream(fis); 
-	            users = (Vector<User>) oin.readObject();
-	            oin.close();
-	            fis.close();
-	        }
-	        catch (IOException e) {
-	            users = new Vector<>();
-	            System.err.println("users.txt: IOException");
-	        }
-	        catch (ClassNotFoundException e) {
-	            users = new Vector<>();
-	            System.err.println("users.txt: ClassNotFoundException");
-	        }
-	    }
+    private static final long serialVersionUID = 1L;
+    private static Vector<User> users;
+    private static Vector<Course> courses;
+    private static DataBase db = new DataBase();
 
-	 public static void saveUsers() {
-	        try {
-	            FileOutputStream fileOut = new FileOutputStream("users.txt");
-	            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-	            out.writeObject(users);
-	            out.flush();
-	            out.close();
-	            fileOut.close();
-	        }
-	        catch (IOException e) {
-	            System.err.println("users.txt: IOException");
-	        }
-	    }
-	    @SuppressWarnings("unchecked")
-		public static void readCourses() {
-	        try {
-	            FileInputStream fis = new FileInputStream("courses.txt");
-	            ObjectInputStream oin = new ObjectInputStream(fis); 
-	            courses = (Vector<Course>) oin.readObject();
-	            oin.close();
-	            fis.close();
-	        }
-	        catch (IOException e) {
-	            users = new Vector<>();
-	            System.err.println("courses.txt: IOException");
-	        }
-	        catch (ClassNotFoundException e) {
-	            users = new Vector<>();
-	            System.err.println("courses.txt: ClassNotFoundException");
-	        }
-	    }
+    private DataBase() {}
 
-	 public static void saveCourses() {
-	        try {
-	            FileOutputStream fileOut = new FileOutputStream("courses.txt");
-	            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-	            out.writeObject(users);
-	            out.flush();
-	            out.close();
-	            fileOut.close();
-	        }
-	        catch (IOException e) {
-	            System.err.println("courses.txt: IOException");
-	        }
-	    }
-		public static Vector<User> getUsers() {
-			return users;
-		}
-		public static void setUsers(Vector <User> users) {
-			DataBase.users = users;
-		}
-		public static Vector <Course> getCourses() {
-			return courses;
-		}
-		public static void setCourses(Vector <Course> courses) {
-			DataBase.courses = courses;
-		}
-		
-		
-		public static void readResearchers() {
-		    try {
-		        FileInputStream fis = new FileInputStream("researchers.txt");
-		        ObjectInputStream oin = new ObjectInputStream(fis);
-		        researchers = (Vector<Researcher>) oin.readObject();
-		        oin.close();
-		        fis.close();
-		    } catch (IOException e) {
-		        researchers = new Vector<>();
-		        System.err.println("researchers.txt: IOException");
-		    } catch (ClassNotFoundException e) {
-		        researchers = new Vector<>();
-		        System.err.println("researchers.txt: ClassNotFoundException");
-		    }
-		}
-		public static void saveResearchers() {
-		    try {
-		        FileOutputStream fileOut = new FileOutputStream("researchers.txt");
-		        ObjectOutputStream out = new ObjectOutputStream(fileOut);
-		        out.writeObject(researchers);
-		        out.flush();
-		        out.close();
-		        fileOut.close();
-		    } catch (IOException e) {
-		        System.err.println("researchers.txt: IOException");
-		    }
-		}
-		
-		public static void addResearcher(User researcher) {
-	        if (users == null) {
-	            users = new Vector<>();
-	        }
-	        users.add(researcher);
-	    }
-		
-		public static Vector<Researcher> getResearchers() {
-		    return researchers;
-		}
+    public static DataBase getDb() {
+        return db;
+    }
 
-		public static void setResearchers(Vector<Researcher> researchers) {
-		    DataBase.researchers = researchers;
-		}
+    static {
+        readUsers();
+        readCourses();
+    }
 
+    @SuppressWarnings("unchecked")
+    public static void readUsers() {
+        try {
+            FileInputStream fis = new FileInputStream("users.txt");
+            ObjectInputStream oin = new ObjectInputStream(fis);
+            users = (Vector<User>) oin.readObject();
+            oin.close();
+            fis.close();
+        } catch (IOException e) {
+            users = new Vector<>();
+            System.err.println("users.txt: IOException");
+        } catch (ClassNotFoundException e) {
+            users = new Vector<>();
+            System.err.println("users.txt: ClassNotFoundException");
+        }
+    }
+
+    public static void saveUsers() {
+        try {
+            FileOutputStream fileOut = new FileOutputStream("users.txt");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(users);
+            out.flush();
+            out.close();
+            fileOut.close();
+        } catch (IOException e) {
+            System.err.println("users.txt: IOException");
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+	public static void readCourses() {
+        try {
+            FileInputStream fis = new FileInputStream("courses.txt");
+            ObjectInputStream oin = new ObjectInputStream(fis);
+            courses = (Vector<Course>) oin.readObject();
+            oin.close();
+            fis.close();
+        } catch (IOException e) {
+            courses = new Vector<>();
+            System.err.println("courses.txt: IOException");
+        } catch (ClassNotFoundException e) {
+            courses = new Vector<>();
+            System.err.println("courses.txt: ClassNotFoundException");
+        }
+    }
+
+    public static void saveCourses() {
+        try {
+            FileOutputStream fileOut = new FileOutputStream("courses.txt");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(courses); 
+            out.flush();
+            out.close();
+            fileOut.close();
+        } catch (IOException e) {
+            System.err.println("courses.txt: IOException");
+        }
+    }
+
+    public static Vector<User> getUsers() {
+        return users;
+    }
+
+    public static void setUsers(Vector<User> users) {
+        DataBase.users = users;
+    }
+
+    public static Vector<Course> getCourses() {
+        return courses;
+    }
+
+    public static void setCourses(Vector<Course> courses) {
+        DataBase.courses = courses;
+    }
 }
