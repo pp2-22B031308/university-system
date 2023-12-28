@@ -1,14 +1,6 @@
 package additional;
 
-import users.*;
-import additional.*;
-import comporators.*;
-import course.*;
-import database.*;
 import enums.*;
-import exceptions.*;
-import service.*;
-import system.*;
 
 
 import java.io.Serializable;
@@ -19,12 +11,11 @@ public class Organization implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private OrganizationName name;
-	private Role role;
+	private OrganizationRole role;
 	 
-	public Organization() {
-		
-	}
-	public Organization(OrganizationName name, Role role) {
+	public Organization() {}
+	
+	public Organization(OrganizationName name, OrganizationRole role) {
 		super();
 		this.name = name;
 		this.role = role;
@@ -38,17 +29,19 @@ public class Organization implements Serializable {
 	  this.name = name;
 	 }
 
-	 public Role getRole() {
+	 public OrganizationRole getRole() {
 	  return role;
 	 }
 
-	 public void setRole(Role role) {
+	 public void setRole(OrganizationRole role) {
 	  this.role = role; 
 	 }
+	 
 	@Override
 	public int hashCode() {
 		return Objects.hash(name, role);
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -60,6 +53,7 @@ public class Organization implements Serializable {
 		Organization other = (Organization) obj;
 		return name == other.name && role == other.role;
 	}
+	
 	@Override
 	public String toString() {
 		return "Organization [name=" + name + ", role=" + role + ", getName()=" + getName() + ", getRole()=" + getRole()

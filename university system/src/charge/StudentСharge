@@ -1,0 +1,67 @@
+package charge;
+
+
+import users.*;
+import database.*;
+import additional.*;
+import course.*;
+import enums.*;
+
+
+public class StudentСharge{
+
+	public static void viewCourses(Faculty faculty) {
+	    System.out.println("Available courses for " + faculty + ":");
+	    DataBase.getCourses().forEach(course -> System.out.println(course.getId() + ": " + course.getName()));
+	}
+
+	public static void RegisterForCourses(Student student, Course course) {
+	    if (DataBase.getCourses().contains(course)) {
+	        ManagerСharge.approveStudentRegistration(student, course);
+	    } else {
+	        System.out.println("Course not found: " + course.getId());
+	    }
+	}
+
+	public static void viewMarks(Student student) {
+		student.getMarks().entrySet().stream().forEach(n->System.out.println(n.getKey().getDescription()+" " + MarkCharge.printAttestation(n.getValue())));
+	}
+	
+	public static void ViewTranscript(Student student) {
+	    System.out.println("Transcript for " + student.getName() + " " + student.getSurname() + ":");
+	    
+	    student.getMarks().entrySet().forEach(entry -> {
+	        Course course = entry.getKey();
+	        String mark = MarkCharge.printAttestation(entry.getValue());
+	        System.out.println(course.getName() + ": " + mark);
+	    });
+	}
+
+	
+	public static void viewTeachers() {
+	    System.out.println("List of Teachers:");
+	    for (User user : DataBase.getUsers()) {
+	        if (user instanceof Teacher) {
+	            Teacher teacher = (Teacher) user;
+	            System.out.println("ID: " + teacher.getId());
+	            System.out.println("Name: " + teacher.getName());
+	            System.out.println("Surname: " + teacher.getSurname());
+	            System.out.println("Faculty: " + teacher.getFaculty());
+	            System.out.println("Teacher Type: " + teacher.getTeacherType());
+	            System.out.println("Courses Taught: " + teacher.getCourses());
+	            System.out.println("-------------------------");
+	        }
+	    }
+	}
+	
+	public static void addComplaint(Student student, Complaint complaint) {
+        student.addComplaint(complaint);
+    }
+
+    public static void receiveComplaint(Student student, Complaint newComplaint) {
+        System.out.println("Student " + student.getName() + " received a complaint from teacher " +
+                newComplaint.getTeacher().getName() + " with urgency level: " + newComplaint.getUrgency());
+
+        addComplaint(student, newComplaint);
+    }
+}

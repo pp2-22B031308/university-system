@@ -1,10 +1,10 @@
 package system;
 
 
-public class testSystem  {
+public class testWSP  {
 	public static void main(String[] args) throws Exception{
-		UniversitySystem  US = UniversitySystem.getUS();
-		US.run();
+		UniversityWSP  UWSP = UniversityWSP.getUWSP();
+		UWSP.run();
 	}
 }
 
